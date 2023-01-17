@@ -1,0 +1,21 @@
+<h1><%=t('.appointment_list') %></h1>
+
+<table>
+  <thead>
+  <tr>
+    <th><%=t('.name') %></th>
+    <th><%=t('.description') %></th>
+    <th><%=t('.link') %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @appointments.each do |appointment| %>
+    <tr>
+      <th><%=appointment.patient_profile.decorate.full_name %></th>
+      <td><%=appointment.description %></td>
+      <td><%= link_to t('.write_recommendation') , new_appointments_recommendation_path(appointments_recommendation: { appointment_id: appointment.id })%> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

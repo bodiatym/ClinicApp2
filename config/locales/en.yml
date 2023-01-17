@@ -1,0 +1,87 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  app_name: "Clinic"
+  welcome: "Hello Visitor!"
+  admin_panel: "Admin Panel"
+  profile: "Profile"
+  sign_up: "Sign-up"
+  log_in: "Log in"
+  log_out: "Logout"
+  profiles:
+    doctor_profile:
+      show:
+        name: "Name: %{name}"
+        type: "Type: %{type}"
+        category: "Category: %{category}"
+    patient_profile:
+      show:
+        name: "Name: %{name}"
+        type: "Type: %{type}"
+    doctor_profiles:
+      index:
+        doctors_list: "Doctor's List"
+        name: "Name"
+        category: "Category"
+        appointment: "Appointment"
+        all: "All"
+  flash:
+    appointment:
+      create:
+        success: "Appointment create successfully!"
+        doctor_max: "Sorry, this doctor is too busy"
+    success: "Success"
+  doctor_list: "Doctor's List"
+  appointments:
+    recommendations:
+      index:
+        recommendations_list: "Recommendations  List"
+        name: "Doctor's Name"
+        category: "Doctors Category"
+        recommendation: "Recommendation"
+    index:
+      appointment_list: "Appointment List"
+      name: "Patient name"
+      description: "Problem description"
+      link: "Link"
+      write_recommendation: "Make Recommendation"
+  doctor_categories:
+    show:
+      doctors_list: "Doctor's List"
+      name: "Name"
+      category: "Category"
+      appointment: "Appointment"
+      all: "All"
+  recommendation_list: "Recommendation  List"
+  pages:
+    home:
+      appointments: "Active Appointments"

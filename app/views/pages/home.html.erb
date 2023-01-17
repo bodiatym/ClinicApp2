@@ -1,0 +1,45 @@
+<section class="container">
+  <h1>
+    <%= t('app_name') %>
+  </h1>
+  <h1>
+    <%= t('welcome') %>
+  </h1>
+  <% if signed_in? %>
+    <% if current_user.type == ::User::SUPER_ADMIN %>
+      <li>
+        <%= link_to t('admin_panel'), admin_root_path %>
+      </li>
+    <% end %>
+    <% if current_user.type == ::User::PATIENT %>
+      <li>
+        <%= link_to t('profile'), patient_profiles_path %>
+      </li>
+      <li>
+        <%= link_to t('doctor_list'), doctor_profiles_path %>
+      </li>
+      <li>
+        <%= link_to t('recommendation_list'), appointments_recommendations_path %>
+      </li>
+    <% end %>
+    <% if current_user.type == ::User::DOCTOR %>
+      <li>
+        <%= link_to t('profile'), doctor_profile_path(current_user.profile.id) %>
+      </li>
+      <li>
+        <%= link_to t('.appointments'), appointments_path %>
+      </li>
+    <% end %>
+    <li>
+      <%= link_to t('log_out'), destroy_user_session_path, method: :delete %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to t('log_in'), new_user_session_path %>
+    </li>
+    <li>
+      <%= link_to t('sign_up'), new_user_registration_path %>
+    </li>
+  <% end %>
+  </p>
+</section>

@@ -1,0 +1,12 @@
+<%= form_for @appointment do |f| %>
+  <%=render "shared/error_messages", object: @appointment %>
+  <%= f.hidden_field :doctor_profile_id, value: params['appointment']['doctor_profile_id'] %>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

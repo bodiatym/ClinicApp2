@@ -1,0 +1,22 @@
+<h1><%=t('.recommendations_list') %></h1>
+
+<table>
+  <thead>
+  <tr>
+    <th><%=t('.name') %></th>
+    <th><%=t('.category') %></th>
+    <th><%=t('.recommendation') %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @facade.recommendations.each do |recommendation| %>
+    <tr>
+
+      <th><%=recommendation.doctor_full_name %></th>
+      <td><%=recommendation.doctor_category_name%></td>
+      <td><%=recommendation.text  %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,25 @@
+<h1><%=t('.doctors_list') %></h1>
+<% @facade.categories.each do |category| %>
+  <li><%=link_to category.name,doctor_category_path(category)%> </li>
+<% end %>
+<li><%=link_to t('.all'),doctor_profiles_path%> </li>
+
+<table>
+  <thead>
+  <tr>
+    <th><%=t('.name') %></th>
+    <th><%=t('.category') %></th>
+    <th><%=t('.appointment') %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @facade.profiles.each do |profile| %>
+    <tr>
+      <th><%= profile.full_name %></th>
+      <td><%= profile.category_name %></td>
+      <td><%= link_to t('.appointment') , new_appointment_path(appointment: { doctor_profile_id: profile.id }) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

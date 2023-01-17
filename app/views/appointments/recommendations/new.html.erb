@@ -1,0 +1,12 @@
+<%= form_for @recommendation do |f| %>
+  <%=render "shared/error_messages", object: @recommendation %>
+  <%= f.hidden_field :appointment_id, value: params['appointments_recommendation']['appointment_id'] %>
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
